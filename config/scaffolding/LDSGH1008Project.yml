@@ -8,7 +8,30 @@ packages:
   gitUsername: ArtiKhareNew
   gitBranch: main
 - name: AddPublicService
+  version: "9.0"
   gitServerName: srcCtrl_gitlab_Arti
   gitUrl: https://gitlab.com/ArtiKhareGitlab
   gitUsername: ArtiKhareGitlab
   gitBranch: secondbranch
+- name: DivisionPackage
+  gitServerName: srcGithubCtrl_Arti
+  gitUrl: https://github.com/ArtiKhareNew
+  gitUsername: ArtiKhareNew
+  gitBranch: main
+services:
+- serviceName: project.ldsgh1008.integrations:gitlabfs
+  packages:
+  - name: LDSGH1008Project
+    version: "1.0"
+  - name: DivisionPackage
+    version: "6.0"
+  - name: AddPublicService
+    version: "9.0"
+- serviceName: AddPublicService:addpublicService
+  packages:
+  - name: AddPublicService
+    version: "9.0"
+- serviceName: pub.math:addInts
+  packages:
+  - name: WmPublic
+    version: 12.1.0.0.1056
